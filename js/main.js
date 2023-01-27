@@ -1,113 +1,99 @@
-
 function tipoPerfume() {
-  let tipo = prompt("elige tipo de perfume con numeros \n1. citrico \n2. floral"); //  tipo
-    if (tipo === "1") {
-      alert(`has elegido el tipo de perfume citrico`);
-      let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No");  // si o no
-          if (respuesta === "1"){alert(
-            `se ha realizado la compra del perfume citrico con exito`);
-            let respuesta2 = prompt("¿desea comprar otro perfume? \n1. Si \n2. No");
-                switch (respuesta2) {
-                    case "1":
-                      tipoPerfume();
-                      break;
-                    case "2":
-                      alert("gracias por su compra, vuelva pronto")
-                      break;
-                    default:
-                      alert("vuelva pronto!")
-                      break;
-                  }
-           
-          }else {
-            alert("usted ha rechazado la compra");
-          };  
+    let p1 = "citrico";
+    let p2 = "floral";
+    let pp1 = 5000; 
+    let pp2 = 4000;
 
-    } else if (tipo === "2") {
-      alert(`has elegido el tipo de perfume floral`);
-      let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No"); // si o no
-          if (respuesta === "1"){alert(
-            `se ha realizado la compra del perfume floral con exito`);
-            let respuesta2 = prompt("¿desea comprar otro perfume? \n1. Si \n2. No");
-            switch (respuesta2) {
-              case "1":
-                tipoPerfume();
-                break;
-              case "2":
-                alert("gracias por su compra, vuelva pronto")
-                break;
-              default:
-                alert("vuelva pronto!")
-                break;
-            }
-          }else {
-            alert("usted ha rechazado la compra");
-          };
-    }else {
-      alert("no has elegido ningun tipo de perfumes que se encuentran en la lista o no eligio las opciones con numeros")
+    let producto = prompt(`digite el tipo de perfume que quiere \n1. ${p1} \n2. ${p2}`); //  tipo
+      if (producto => 1 && producto <= 2) {
+            if (producto === "1"){
+                alert(`has elegido el producto perfume ${p1}`);
+                let cantidad = prompt(`digite la cantidad de perfume ${p1} que desea comprar, c/u cuesta $${pp1}`);
+                let precioFinal = cantidad * pp1;
+                alert(`el monto total a pagar es de $${precioFinal}`);
+                }else if (producto === "2"){
+                    alert(`has elegido el producto perfume ${p2}`);
+                    let cantidad = prompt(`digite la cantidad de perfume ${p2} que desea comprar, c/u cuesta $${pp2}`);
+                    let precioFinal = cantidad * pp2;
+                    alert(`el monto total a pagar es de $${precioFinal}`);
+                }else {
+                    alert("no eligio ninguno de los productos de la lista")
+                }  
+                let respuesta2 = prompt("¿desea comprar otro perfume? \n1. Si \n2. No");
+              switch (respuesta2) {
+                case "1":
+                  tipoPerfume(); // seria como un bucle pero no
+                  break;
+                case "2":
+                  alert("gracias por su compra, vuelva pronto")
+                  break;
+                default:
+                  alert("vuelva pronto!")
+                  break;
+              }
+      }
     }
-  } 
-
 ////////////////////////////////
 
 function tipoVestimenta() {
-  let tipo = prompt("elige tipo de vestimenta \n1. gorra \n2. piluso"); 
-    if (tipo === "1") { 
-      alert(`has elegido el tipo de vestimenta gorra`);
-      let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No");  
-          if (respuesta === "1"){alert(
-            `se ha realizado la compra del producto gorra con exito`);
-            let respuesta2 = prompt("¿desea comprar otra vestimenta? \n1. Si \n2. No");
-            switch (respuesta2) {
-              case "1":
-                tipoVestimenta();
-                break;
-              case "2":
-                alert("gracias por su compra, vuelva pronto")
-                break;
-              default:
-                alert("vuelva pronto!")
-                break;
-            }
-          }else {
-            alert("usted ha rechazado la compra");
-          };  
+    let p1 = "gorra";
+    let p2 = "piluso";
+    let pp1 = 2000; 
+    let pp2 = 1000;
 
-    } else if (tipo === "2") {
-      alert(`has elegido el tipo de vestimenta piluso`);
-      let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No"); 
-          if (respuesta === "1"){alert(
-            `se ha realizado la compra del producto piluso} con exito`);
-            let respuesta2 = prompt("¿desea comprar otra vestimenta? \n1. Si \n2. No");
-            switch (respuesta2) {
-              case "1":
-                tipoVestimenta();
-                break;
-              case "2":
-                alert("gracias por su compra, vuelva pronto")
-                break;
-              default:
-                alert("vuelva pronto!")
-                break;
-            }
-          }else {
-            alert("usted ha rechazado la compra");
-          };
-    }else {
-      alert("no has elegido ningun tipo de vestimenta que se encuentran en la lista")
+    let producto = prompt(`digite el tipo de vestimenta que quiere \n1. ${p1} \n2. ${p2}`); //  tipo
+      if (producto => 1 && producto <= 2) {
+            if (producto === "1"){
+                alert(`has elegido la vestimenta ${p1}`);
+                let cantidad = prompt(`digite la cantidad de ${p1} que desea comprar, c/u cuesta $${pp1}`);
+                let precioFinal = cantidad * pp1;
+                alert(`el monto total a pagar es de $${precioFinal}`);
+                }else if (producto === "2"){
+                    alert(`has elegido la vestimenta ${p2}`);
+                    let cantidad = prompt(`digite la cantidad de ${p2} que desea comprar, c/u cuesta $${pp2}`);
+                    let precioFinal = cantidad * pp2;
+                    alert(`el monto total a pagar es de $${precioFinal}`);
+                }else {
+                    alert("no eligio ninguno de los productos de la lista")
+                }  
+                let respuesta2 = prompt("¿desea comprar otra vestimenta? \n1. Si \n2. No");
+              switch (respuesta2) {
+                case "1":
+                  tipoVestimenta();
+                  break;
+                case "2":
+                  alert("gracias por su compra, vuelva pronto")
+                  break;
+                default:
+                  alert("vuelva pronto!")
+                  break;
+              }
+      }
     }
-  } 
-  
 /////////////////////////////
 
 function tipoAccesorios() {
-  let tipo = prompt("elige el tipo de accesorio \n1. pulsera \n2. collar"); 
-    if (tipo === "1") { 
-      alert(`has elegido el accesorio pulsera`);
-      let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No");  
-          if (respuesta === "1"){alert(
-            `se ha realizado la compra del producto pulsera con exito`);
-            let respuesta2 = prompt("¿desea comprar otro accesorio? \n1. Si \n2. No");
+    let p1 = "pulsera";
+    let p2 = "collar";
+    let pp1 = 1000; 
+    let pp2 = 500;
+
+    let producto = prompt(`digite el tipo de accesorio que quiere \n1. ${p1} \n2. ${p2}`); //  tipo
+      if (producto => 1 && producto <= 2) {
+            if (producto === "1"){
+                alert(`has elegido el accesorio ${p1}`);
+                let cantidad = prompt(`digite la cantidad de ${p1} que desea comprar, c/u cuesta $${pp1}`);
+                let precioFinal = cantidad * pp1;
+                alert(`el monto total a pagar es de $${precioFinal}`);
+                }else if (producto === "2"){
+                    alert(`has elegido el accesorio ${p2}`);
+                    let cantidad = prompt(`digite la cantidad de ${p2} que desea comprar, c/u cuesta $${pp2}`);
+                    let precioFinal = cantidad * pp2;
+                    alert(`el monto total a pagar es de $${precioFinal}`);
+                }else {
+                    alert("no eligio ninguno de los productos de la lista")
+                }  
+                let respuesta2 = prompt("¿desea comprar otro accesorio? \n1. Si \n2. No");
               switch (respuesta2) {
                 case "1":
                   tipoAccesorios();
@@ -119,34 +105,8 @@ function tipoAccesorios() {
                   alert("vuelva pronto!")
                   break;
               }
-          }else {
-            alert("usted ha rechazado la compra");
-          };  
-
-    } else if (tipo === "2") {
-      alert(`has elegido el tipo de accesorio collar`);
-      let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No"); 
-          if (respuesta === "1"){alert(
-            `se ha realizado la compra del producto collar con exito`);
-            let respuesta2 = prompt("¿desea comprar otro accesorio? \n1. Si \n2. No");
-            switch (respuesta2) {
-              case "1":
-                tipoAccesorios();
-                break;
-              case "2":
-                alert("gracias por su compra, vuelva pronto")
-                break;
-              default:
-                alert("vuelva pronto!")
-                break;
-            }
-          }else {
-            alert("usted ha rechazado la compra");
-          };
-    }else {
-      alert("no has elegido ningun tipo de accesorio que se encuentran en la lista")
-    }
-  } 
+      }
+    } 
 
 
 
@@ -160,7 +120,7 @@ let producto = prompt(
 switch (producto) {
     case "1":
       alert("elegiste la opcion perfume");
-      tipoPerfume(); // cree la funcion porque no me dejaba crear variables con el mismo nombre y queria usar "tipo" pero, convertir esto en funcion me parece innecesario
+      tipoPerfume(); 
       break;   
     case "2":
       alert("elegiste la opcion vestimenta");

@@ -47,7 +47,7 @@ function tipoPerfume() {
       }
     } 
   
-  /////////////////////////////
+  ////////////////////////////////
   
   function tipoVestimenta() {
     let tipo = prompt("elige tipo de vestimenta \n1. gorra \n2. piluso"); 

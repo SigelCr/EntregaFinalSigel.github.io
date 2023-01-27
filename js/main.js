@@ -3,7 +3,7 @@ function tipoPerfume() {
     let tipo = prompt("elige tipo de perfume \n1. citrico \n2. floral"); //  tipo
       if (tipo === "citrico" || tipo === "CITRICO") { // aca use OR por si el usario usa mayus
         alert(`has elegido el tipo de perfume ${tipo}`);
-        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n1. No");  // si o no
+        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No");  // si o no
             if (respuesta == "si"){alert(
               `se ha realizado la compra del perfume ${tipo} con exito`);
               let respuesta2 = prompt("¿desea comprar otro perfume? \n1. Si \n2. No");
@@ -24,7 +24,7 @@ function tipoPerfume() {
   
       } else if (tipo === "floral" || tipo === "FLORAL") {
         alert(`has elegido el tipo de perfume ${tipo}`);
-        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n1. No"); // si o no
+        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No"); // si o no
             if (respuesta == "si"){alert(
               `se ha realizado la compra del producto ${tipo} con exito`);
               let respuesta2 = prompt("¿desea comprar otro perfume? \n1. Si \n2. No");
@@ -53,7 +53,7 @@ function tipoPerfume() {
     let tipo = prompt("elige tipo de vestimenta \n1. gorra \n2. piluso"); 
       if (tipo === "gorra" || tipo === "GORRA") { 
         alert(`has elegido el tipo de vestimenta ${tipo}`);
-        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n1. No");  
+        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No");  
             if (respuesta == "si"){alert(
               `se ha realizado la compra del producto ${tipo} con exito`);
               let respuesta2 = prompt("¿desea comprar otra vestimenta? \n1. Si \n2. No");
@@ -74,7 +74,7 @@ function tipoPerfume() {
   
       } else if (tipo === "piluso" || tipo === "PILUSO") {
         alert(`has elegido el tipo de vestimenta ${tipo}`);
-        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n1. No"); 
+        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No"); 
             if (respuesta == "si"){alert(
               `se ha realizado la compra de producto ${tipo} con exito`);
               let respuesta2 = prompt("¿desea comprar otra vestimenta? \n1. Si \n2. No");
@@ -103,7 +103,7 @@ function tipoPerfume() {
     let tipo = prompt("elige el tipo de accesorio \n1. pulsera \n2. collar"); 
       if (tipo === "pulsera" || tipo === "PULSERA") { 
         alert(`has elegido el accesorio ${tipo}`);
-        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n1. No");  
+        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No");  
             if (respuesta == "si"){alert(
               `se ha realizado la compra del producto ${tipo} con exito`);
               let respuesta2 = prompt("¿desea comprar otro accesorio? \n1. Si \n2. No");
@@ -124,7 +124,7 @@ function tipoPerfume() {
   
       } else if (tipo === "collar" || tipo === "COLLAR") {
         alert(`has elegido el tipo de accesorio ${tipo}`);
-        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n1. No"); 
+        let respuesta = prompt("¿quieres comprarlo? \n1. Si \n2. No"); 
             if (respuesta == "si"){alert(
               `se ha realizado la compra del producto ${tipo} con exito`);
               let respuesta2 = prompt("¿desea comprar otro accesorio? \n1. Si \n2. No");

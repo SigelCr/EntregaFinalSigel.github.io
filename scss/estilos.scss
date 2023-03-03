@@ -40,14 +40,15 @@ body {
     width: 100%;
 }
 
-.imagen-btn {
-    border: 1px solid white;
-    width: 100%;
-    object-fit: cover;
-    background-image: url(../imagenes/fondo-hamburguesa.png);
-    background-size: cover;
-    margin-top: 50px;
-}
+  
+  .imagen-btn {
+      border: 1px solid white;
+      width: 100%;
+      object-fit: cover;
+      background-image: url(../imagenes/fondo-hamburguesa.png);
+      background-size: cover;
+      margin-top: 40px;
+  }
 
 
 .info-carta {
@@ -146,9 +147,6 @@ button {
   width: 80%; // gracias a esto empuja al submit del input
 }
 
-.parrafo {
-  color: black !important;
-}
 
 
 .botonInput {
@@ -167,32 +165,21 @@ button {
 
 
 .contenedorJs {
-  color: rgb(233, 218, 218);
-  background-image: url(../imagenes/fondocarrito.png);
-  background-size: cover;
-  width: 80%;
-  height: 50%;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.815);
+  width: 350px;
+  height: 200px;
   position: fixed; 
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  border: 15px solid rgba(77, 0, 0, 0.342);
-    & h1{
-      font-size: 30px;
-      padding: 5px;
-      margin: 10px;
-    }
-    & h2 {
+  border: 5px solid rgb(33, 216, 17) !important;
+    & h1, h3 {
       font-size: 20px;
-      padding: 5px;
-      margin: 10px;
+      padding: 15px;
+      margin-top: 20px;
+      color: rgb(36, 170, 36);
     }
-    & p {
-      padding: 5px;
-      margin: 5px;
-      font-size: 40px;
-      color: rgb(1, 29, 3);
-    }
+
 }
 
 .btn-emergente {
@@ -204,4 +191,32 @@ button {
       background-color: black;
       color: white;
     }
+}
+
+.descripcion {
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.contenedorCarrito {
+  background-color: black;
+  color: white;
+  border: 1px solid rgb(29, 29, 29);
+    & input {
+      padding: 5px;
+      margin: 10px;
+    }
+}
+
+
+.ventana-alert {
+  color: rgb(40, 214, 17);
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid red;
+}
+
+.verde {
+  color: green;
 }

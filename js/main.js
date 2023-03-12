@@ -1,54 +1,55 @@
 let botonMostrar = document.getElementById("botonMostrar");
 let botonCarrito = document.getElementById("botonCarrito");
-let verdad = true;
-let carritoVacio = JSON.parse(localStorage.getItem("carrito")) || [];
 let carrito = document.getElementById(`carrito`)
-
-const productos = [ 
-      { id: 1, nombre: "Simple",            precio: 1000, imagen: `./imagenes/hamburguesa1.png`, descripcion: "El sabor de la carne 100% vacuna más deliciosa, acompañado del pan más esponjoso, kétchup, mostaza y cebolla triturada."},
-      { id: 2, nombre: "Doble",             precio: 1200, imagen: `./imagenes/hamburguesa2.png`, descripcion: "Hamburguesa elaborada con dos medallones de carne 100% de carne vacuna y dos fetas de nuestro exclusivo Quedo Cheddar."},
-      { id: 3, nombre: "Triple",            precio: 2000, imagen: './imagenes/hamburguesa3.png', descripcion: "Tres medallones de carne 100% vacuna, queso derretido, mostaza, kétchup y cebolla triturada, es algo que nunca puede fallar."},
-      { id: 4, nombre: "Big",               precio: 2100, imagen: `./imagenes/hamburguesa4.png`, descripcion: "Dos hamburguesas de carne con salsa especial y queso derretido, cebolla, lechuga y pepino, la hace la hamburguesa más famosa del mundo."},
-      { id: 5, nombre: "Triple Tasty",      precio: 2300, imagen: `./imagenes/hamburguesa5.png`, descripcion: "Tres medallones de carne, tres fetas de Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado Salsa Tasty."},
-      { id: 6, nombre: "Doble Bacon",       precio: 2100, imagen: `./imagenes/hamburguesa6.png`, descripcion: "Dos carnes, inigualable queso cheddar, cebolla, kétchup y mostaza, y el increíble ingrediente que lo hace único: bacon premium."},
-      { id: 7, nombre: "Tasty Doble Bacon", precio: 2500, imagen: `./imagenes/hamburguesa7.png`, descripcion: "Grand Tasty Turbo Bacon Doble"},
-      { id: 8, nombre: "Tasty Triple Bacon",precio: 3000, imagen: `./imagenes/hamburguesa8.png`, descripcion: "Al tradicional sabor inconfundible de la salsa Tasty ahora lo potenciamos con nuestro espectacular Bacon crujiente y con nuestro característico Bacon Crispy triturado."},
-    ];
-
-localStorage.setItem("productos",JSON.stringify(productos));
+let abrirCarrito = true;
+let abrirProductos = true;
+let carritoVacio = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //boton ver productos
-function verProductos(){
-  
+const verProductos = async () => {
+try {
   botonMostrar.className = "boton";
-    
-  productos.forEach(item => {
+
+  const productos = await fetch(`./data.json`);
+  const data = await productos.json();
+  data.forEach(item => {
     let contenedorCarta = document.createElement("div");
+    contenedorCarta.className = `contenedorBurger`
     contenedorCarta.innerHTML = `
-    <div>
-      <img class="imagen-btn" src="${item.imagen}" alt="Card image cap">
+      <div class="contenedor-imagen">
+        <img id="${item.imagen}" class="imagen-btn" src="${item.imagen}" alt="Card image cap">
+      </div>
       <div>
           <h3>${item.nombre}</h3>
           <p>$${item.precio}</p>
           <h5 class="descripcion">${item.descripcion}</h5>
           <button class="boton" id="${item.id}">Añadir al carrito</button> <br><br><hr>
       </div>
-    </div>
-    `;                               // item.id como id del boton para que reconozca a cual producto le estoy agregando al carro, sino serian todos los botones iguales
+    
+    `;
+    // item.id como id del boton para que reconozca a cual producto le estoy agregando al carro, sino serian todos los botones iguales
     botonMostrar.append(contenedorCarta);
-
+    
     let botonAñadirCarrito = document.getElementById(`${item.id}`) //lo cree en el innerHTML de contenedorcarta y ahora me traigo el id
-
+    
     botonAñadirCarrito.addEventListener("click", (e) => {
       e.stopPropagation(); // para que no se cierre el boton "nuestras hamburguesas" al hacer click en el btn de agregar al carrito
     })
-
+    
+    let imagen = document.getElementById(`${item.imagen}`);
+    
+    imagen.addEventListener("click", (e) => {
+      console.log("click en imagen")
+      e.stopPropagation();
+    })
+    
     botonAñadirCarrito.addEventListener("click", () => guardarEnCarrito(item.id))
-  })
+    
+  }) 
 
 //Guardar en el carrito (funcion dentro del forEach)
 const guardarEnCarrito = (id) => {
-  let productoEncontrado = productos.find(item => item.id === id)
+  let productoEncontrado = data.find(item => item.id === id)
 
   let productoYaEnCarrito = carritoVacio.find(item => item.id === id);
 
@@ -76,6 +77,11 @@ const guardarEnCarrito = (id) => {
     })
   }     
 }
+
+} catch (error) {
+  console.error("error dentro de la funcion ver productos")
+}
+
 }
 
 botonMostrar.addEventListener("click", abrirCerrarBotonProductos);
@@ -91,7 +97,9 @@ function verCarrito(){
     <div class="contenedorCarrito ${item.id}">
       <br>
       <h1>Hamburguesa ${item.nombre} lista para llevar</h1>
-      <img class="imagen-btn" src="${item.imagen}" alt="hamburguesa">
+      <div class="contenedor-imagen">
+        <img id="${item.imagen}"class="imagen-btn" src="${item.imagen}" alt="hamburguesa">
+      </div>
       <div>
           <h5>Nombre: ${item.nombre}</h5>
           <p>Precio: $${item.precio}</p>
@@ -111,15 +119,22 @@ function verCarrito(){
       botonDeshacer(item.id)
     })
     
-//Funcion para sacar el producto del carrito
+    let imagenC = document.getElementById(`${item.imagen}`);
+
+    imagenC.addEventListener("click", (e) => {
+      console.log("click en imagen carrito")
+      e.stopPropagation();
+    })
+//Funcion para sacar el producto del carrito al presionar deshacer
 function botonDeshacer(id){
 
   let indice = carritoVacio.findIndex(producto => producto.id === id);
   
-  if(indice !== -1) { 
+    indice !== -1 &&  //operador and (simplificacion del condicional if que no necesite un else)
     carritoVacio.splice(indice, 1);
+    localStorage.setItem('carrito', JSON.stringify(carritoVacio)); // Eliminar del localStorage
     Swal.fire({
-      title: `Hamburguesa ${item.nombre} quitado de carrito exitosamente`,
+      title: `Hamburguesa ${item.nombre} quitado del carrito`,
       width: `450px`,
       timer: 1500,
       timerProgressBar: true,
@@ -131,10 +146,6 @@ function botonDeshacer(id){
     while (cartaCarrito.length > 0) {
       cartaCarrito[0].remove();
     }
-
-  }else {
-    console.log("no anda");
-  }
 }
 })
 //Boton "comprar" de carritoVacio
@@ -169,37 +180,93 @@ function botonComprarProducto(){
       width: `450px`,
       backdrop: false,
     })
-     
   })
   console.log(precioTotal);
+  carritoVacio = []
+  localStorage.setItem("carrito",JSON.stringify(carritoVacio)); // una vez comprado "carrito" queda vacio en el storage si vuelvo a recargar pag
 }
 
 //Para abrir y cerrar el boton de productos (nuestras hamburguesas)
 function abrirCerrarBotonProductos(){
-  if(verdad){
+  if(abrirProductos){
     verProductos();
     console.log("abrir menu");
-    verdad = false;
+    abrirProductos = false;
   }
   else {
     botonMostrar.innerHTML = `Nuestras hamburguesas`;
     console.log("cerrar menu");
-    verdad = true;
+    abrirProductos = true;
   }
 }
 
 //para abrir y cerrar el boton de carrito
 function abrirCerrarBotonCarrito(){
-  if(verdad){
+  if(abrirCarrito){
     console.log("abrir carrito");
     verCarrito();
-    verdad = false;
+    abrirCarrito = false;
   }
   else {
     console.log("cerrar carrito");
     botonCarrito.innerHTML = `<span class="boton">Carrito</span>`;
-    verdad = true;
+    abrirCarrito = true;
   }
 }
 
+
 botonCarrito.addEventListener("click", abrirCerrarBotonCarrito);
+
+//cambiar tema de la pagina
+const cambiarTema = document.getElementById('tema');
+const body = document.body;
+
+cambiarTema.addEventListener("click", () => {
+
+  body.className === `cambiarTema` ? 
+  (body.className = ``, cambiarTema.innerHTML = `<i class="fa-solid fa-moon"></i>`) :
+  (body.className = 'cambiarTema', cambiarTema.innerHTML = `<i class="fa-solid fa-sun solcito"></i>`);
+
+});
+
+
+/////////
+
+/* let listado = document.getElementById("listado");
+
+const traerProductos = async () => {
+try {
+  const response = await fetch(`./data.json`);
+  const data = await response.json();
+
+  data.forEach(producto => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+    <h1>id: ${producto.id}</h1>
+    <h3>nombre: ${producto.nombre}</h3>
+    <p>precio: $${producto.precio}</p>
+  `
+  listado.append(li);
+  })
+  
+} catch (error) {
+  console.error("errorrrrrr")
+}
+}
+traerProductos(); */
+
+/* 
+const personajes = async() => {
+  const personajesRick = await fetch("https://rickandmortyapi.com/api/character")
+  const data = await personajesRick.json();
+  console.log(data.results);
+  data.results.forEach(personajeRick => {
+    let item = document.createElement(`div`);
+    item.innerHTML = `
+    <h2>personaje: ${personajeRick.name}</h2>
+    <img src="${personajeRick.image}"/>
+    `
+    document.body.append(item);
+  })
+}
+personajes(); */

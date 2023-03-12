@@ -1,0 +1,11 @@
+ 
+ [ 
+      { "id": 1, "nombre": "Simple",            "precio": 1000, "imagen": "./imagenes/hamburguesa1.png", "descripcion": "El sabor de la carne 100% vacuna más deliciosa, acompañado del pan más esponjoso, kétchup, mostaza y cebolla triturada."},
+      { "id": 2, "nombre": "Doble",             "precio": 1200, "imagen": "./imagenes/hamburguesa2.png", "descripcion": "Hamburguesa elaborada con dos medallones de carne 100% de carne vacuna y dos fetas de nuestro exclusivo Quedo Cheddar."},
+      { "id": 3, "nombre": "Triple",            "precio": 2000, "imagen": "./imagenes/hamburguesa3.png", "descripcion": "Tres medallones de carne 100% vacuna, queso derretido, mostaza, kétchup y cebolla triturada, es algo que nunca puede fallar."},
+      { "id": 4, "nombre": "Big",               "precio": 2100, "imagen": "./imagenes/hamburguesa4.png", "descripcion": "Dos hamburguesas de carne con salsa especial y queso derretido, cebolla, lechuga y pepino, la hace la hamburguesa más famosa del mundo."},
+      { "id": 5, "nombre": "Triple Tasty",      "precio": 2300, "imagen": "./imagenes/hamburguesa5.png", "descripcion": "Tres medallones de carne, tres fetas de Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado Salsa Tasty."},
+      { "id": 6, "nombre": "Doble Bacon",       "precio": 2100, "imagen": "./imagenes/hamburguesa6.png", "descripcion": "Dos carnes, inigualable queso cheddar, cebolla, kétchup y mostaza, y el increíble ingrediente que lo hace único: bacon premium."},
+      { "id": 7, "nombre": "Tasty Doble Bacon", "precio": 2500, "imagen": "./imagenes/hamburguesa7.png", "descripcion": "Grand Tasty Turbo Bacon Doble"},
+      { "id": 8, "nombre": "Tasty Triple Bacon","precio": 3000, "imagen": "./imagenes/hamburguesa8.png", "descripcion": "Al tradicional sabor inconfundible de la salsa Tasty ahora lo potenciamos con nuestro espectacular Bacon crujiente y con nuestro característico Bacon Crispy triturado."}
+    ]

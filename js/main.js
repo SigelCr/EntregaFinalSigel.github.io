@@ -11,8 +11,10 @@ try {
   botonMostrar.className = "boton";
 
   const productos = await fetch(`./data.json`);
+
   const data = await productos.json();
-  data.forEach(item => {
+
+  data.forEach((item) => {
     let contenedorCarta = document.createElement("div");
     contenedorCarta.className = `contenedorBurger`
     contenedorCarta.innerHTML = `
@@ -188,34 +190,23 @@ function botonComprarProducto(){
 
 //Para abrir y cerrar el boton de productos (nuestras hamburguesas)
 function abrirCerrarBotonProductos(){
-  if(abrirProductos){
-    verProductos();
-    console.log("abrir menu");
-    abrirProductos = false;
-  }
-  else {
-    botonMostrar.innerHTML = `Nuestras hamburguesas`;
-    console.log("cerrar menu");
-    abrirProductos = true;
-  }
+  abrirProductos ? 
+  ( verProductos(), console.log("abrir menu"), abrirProductos = false ) :
+  ( botonMostrar.innerHTML = `Nuestras hamburguesas`, console.log("cerrar menu"), abrirProductos = true);
 }
+
 
 //para abrir y cerrar el boton de carrito
 function abrirCerrarBotonCarrito(){
-  if(abrirCarrito){
-    console.log("abrir carrito");
-    verCarrito();
-    abrirCarrito = false;
-  }
-  else {
-    console.log("cerrar carrito");
-    botonCarrito.innerHTML = `<span class="boton">Carrito</span>`;
-    abrirCarrito = true;
-  }
+  abrirCarrito ? 
+  ( console.log("abrir carrito"), verCarrito(), abrirCarrito = false ) :
+  ( console.log("cerrar carrito"), botonCarrito.innerHTML = `<span class="boton">Carrito</span>`, abrirCarrito = true );
 }
 
 
 botonCarrito.addEventListener("click", abrirCerrarBotonCarrito);
+
+//------------------------------------------//
 
 //cambiar tema de la pagina
 const cambiarTema = document.getElementById('tema');
@@ -226,47 +217,6 @@ cambiarTema.addEventListener("click", () => {
   body.className === `cambiarTema` ? 
   (body.className = ``, cambiarTema.innerHTML = `<i class="fa-solid fa-moon"></i>`) :
   (body.className = 'cambiarTema', cambiarTema.innerHTML = `<i class="fa-solid fa-sun solcito"></i>`);
-
-});
-
-
-/////////
-
-/* let listado = document.getElementById("listado");
-
-const traerProductos = async () => {
-try {
-  const response = await fetch(`./data.json`);
-  const data = await response.json();
-
-  data.forEach(producto => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-    <h1>id: ${producto.id}</h1>
-    <h3>nombre: ${producto.nombre}</h3>
-    <p>precio: $${producto.precio}</p>
-  `
-  listado.append(li);
-  })
   
-} catch (error) {
-  console.error("errorrrrrr")
-}
-}
-traerProductos(); */
+  });
 
-/* 
-const personajes = async() => {
-  const personajesRick = await fetch("https://rickandmortyapi.com/api/character")
-  const data = await personajesRick.json();
-  console.log(data.results);
-  data.results.forEach(personajeRick => {
-    let item = document.createElement(`div`);
-    item.innerHTML = `
-    <h2>personaje: ${personajeRick.name}</h2>
-    <img src="${personajeRick.image}"/>
-    `
-    document.body.append(item);
-  })
-}
-personajes(); */

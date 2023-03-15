@@ -2,17 +2,150 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
-  overflow-x: hidden; }
+  margin: 0; }
 
 body {
-  background-color: black; }
+  background-color: #0c0505; }
+
+.cambiarTema {
+  background-color: #f9ae41; }
+  .cambiarTema nav {
+    background-color: #f9ae41; }
+  .cambiarTema .listaMenus {
+    color: #ffe4af; }
+  .cambiarTema .contenedor {
+    background-color: #f9ae41; }
+  .cambiarTema div, .cambiarTema h2, .cambiarTema strong, .cambiarTema h1, .cambiarTema h3, .cambiarTema b, .cambiarTema a {
+    color: #cecece; }
+  .cambiarTema .contenedorBurger {
+    background-color: #be8200; }
+  .cambiarTema #botonMostrar {
+    background-color: #be8200; }
+  .cambiarTema .solcito {
+    color: #d9dd00; }
+  .cambiarTema .contenedorCarrito {
+    background-color: #be8200;
+    color: white;
+    border: 1px solid black; }
+    .cambiarTema .contenedorCarrito h1, .cambiarTema .contenedorCarrito h5, .cambiarTema .contenedorCarrito p {
+      color: #e9dbdb; }
+    .cambiarTema .contenedorCarrito input {
+      padding: 5px;
+      margin: 10px; }
+
+#tema {
+  font-size: 25px;
+  color: white;
+  background-color: transparent;
+  height: 30px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  outline: none;
+  border: none;
+  z-index: 1000; }
+
+.solcito {
+  color: yellow; }
+
+.nav {
+  background-color: #0c0505;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%; }
+
+.listaMenus {
+  display: flex;
+  list-style-type: none;
+  padding: 5px;
+  justify-content: center;
+  color: wheat;
+  border-bottom: 2px solid wheat; }
+  .listaMenus li {
+    padding: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 5px 0 5px; }
+  .listaMenus a {
+    text-decoration: none;
+    color: wheat; }
+  .listaMenus li:hover, .listaMenus a:hover {
+    color: #f5c162;
+    cursor: pointer; }
+
+.contenedorImagenPrincipal {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center; }
+
+.imagenPrincipal {
+  width: 25%;
+  z-index: 10;
+  margin-top: 50px; }
+
+.carrusel {
+  padding: 0; }
+
+.carruselItems {
+  display: flex;
+  overflow: hidden;
+  padding: 20px 0 50px 0; }
+
+.carruselItem {
+  min-width: 300px;
+  max-width: 300px;
+  height: 200px; }
+  .carruselItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .carruselItem:hover {
+    transform: scale(1.5); }
+
+.titulo {
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  color: #ffe4af; }
+
+.contenedorCartaMenu {
+  display: flex;
+  justify-content: center; }
+
+.cartaMenu {
+  width: 90%; }
+
+.footer {
+  font-size: 15px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  color: wheat;
+  text-align: center; }
+  .footer .contacto {
+    display: flex;
+    align-items: center;
+    margin: auto; }
+    .footer .contacto i {
+      font-size: 30px;
+      margin: 5px 15px 5px 15px; }
+  .footer .derechos {
+    margin: auto;
+    font-size: 15px; }
+
+.botonVentana {
+  color: black;
+  background-color: white; }
 
 .contenedor {
   margin: 50px auto 50px auto;
   width: 350px;
   padding: 5px;
-  background-color: black; }
+  background-color: #0c0505; }
   .contenedor h1 {
     font-size: 18px; }
   .contenedor a {
@@ -26,7 +159,7 @@ body {
     color: white;
     margin: 15px; }
 
-.imagen {
+.logoBurger {
   width: 100%; }
 
 .contenedor-imagen {
@@ -141,37 +274,3 @@ button {
 
 .verde {
   color: green; }
-
-.cambiarTema {
-  background-color: #471717; }
-  .cambiarTema .contenedor {
-    background-color: #471717; }
-  .cambiarTema div, .cambiarTema h2, .cambiarTema strong, .cambiarTema h1, .cambiarTema h3, .cambiarTema b, .cambiarTema a {
-    color: #cecece; }
-  .cambiarTema .contenedorBurger {
-    background-color: #1d0707; }
-  .cambiarTema #botonMostrar {
-    background-color: #1d0707; }
-  .cambiarTema .solcito {
-    color: #d9dd00; }
-  .cambiarTema .contenedorCarrito {
-    background-color: #1d0707;
-    color: white;
-    border: 1px solid black; }
-    .cambiarTema .contenedorCarrito h1, .cambiarTema .contenedorCarrito h5, .cambiarTema .contenedorCarrito p {
-      color: #e9dbdb; }
-    .cambiarTema .contenedorCarrito input {
-      padding: 5px;
-      margin: 10px; }
-
-#tema {
-  font-size: 30px;
-  padding: 10px;
-  margin: 10px;
-  color: white;
-  background-color: transparent;
-  height: 75px;
-  position: fixed;
-  right: 10px;
-  top: 10px;
-  outline: none; }

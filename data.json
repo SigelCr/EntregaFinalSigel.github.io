@@ -7,5 +7,7 @@
       { "id": 5, "nombre": "Triple Tasty",      "precio": 2300, "imagen": "./imagenes/hamburguesa5.png", "descripcion": "Tres medallones de carne, tres fetas de Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado Salsa Tasty."},
       { "id": 6, "nombre": "Doble Bacon",       "precio": 2100, "imagen": "./imagenes/hamburguesa6.png", "descripcion": "Dos carnes, inigualable queso cheddar, cebolla, kétchup y mostaza, y el increíble ingrediente que lo hace único: bacon premium."},
       { "id": 7, "nombre": "Tasty Doble Bacon", "precio": 2500, "imagen": "./imagenes/hamburguesa7.png", "descripcion": "Grand Tasty Turbo Bacon Doble"},
-      { "id": 8, "nombre": "Tasty Triple Bacon","precio": 3000, "imagen": "./imagenes/hamburguesa8.png", "descripcion": "Al tradicional sabor inconfundible de la salsa Tasty ahora lo potenciamos con nuestro espectacular Bacon crujiente y con nuestro característico Bacon Crispy triturado."}
+      { "id": 8, "nombre": "Tasty Triple Bacon","precio": 3000, "imagen": "./imagenes/hamburguesa8.png", "descripcion": "Al tradicional sabor inconfundible de la salsa Tasty ahora lo potenciamos con nuestro espectacular Bacon crujiente y con nuestro característico Bacon Crispy triturado."},
+      { "id": 9, "nombre": "Quintuple",         "precio": 4500, "imagen": "./imagenes/hamburguesa9.png", "descripcion": "5 carnes a la parri, salsa stacker, pan, queso cheddar, panceta. Solo para expertos"},
+      { "id": 10,"nombre": "Bondiolita Morrón", "precio": 4000, "imagen": "./imagenes/hamburguesa10.png","descripcion": "La creación agridulce de la realeza. Pan de germen de trigo, barbacoa y mostaza, morrón, cebolla rehogada y bondiolita."}
     ]
